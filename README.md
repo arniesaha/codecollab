@@ -10,7 +10,7 @@ Built with [javalin.io](https://javalin.io/) - which is a lightweight Java & Kot
 <img src="screenshots/screenshot-2.png" width="40%" />
 
 ## run locally
-* `git clone https://github.com/arniesaha.git`
+* `git clone https://github.com/arniesaha/codecollab.git`
 * `cd codecollab`
 * `mvn install`
 * `java -jar target/codecollab-jar-with-dependencies.jar`
