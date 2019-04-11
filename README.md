@@ -1,8 +1,11 @@
 # codecollab
 
-## live at
+## live at http://codecollab-1591334708.ap-south-1.elb.amazonaws.com/
 
 ## screenshot
+
+<img src="screenshots/screenshot-1.png" width="25%" />
+<img src="screenshots/screenshot-2.png" width="25%" />
 
 ## run locally
 * `git clone https://github.com/arniesaha.git`
