@@ -1,7 +1,7 @@
 function setupWebSocket() {
 
     const textArea = document.querySelector("textarea");
-    const ws = new WebSocket(`ws://localhost:7070/docs/${window.location.hash.substr(1)}`);
+    const ws = new WebSocket("ws://" + location.hostname + ":" + location.port +"/docs/${window.location.hash.substr(1)}");
     textArea.onkeyup = () => ws.send(textArea.value);
     ws.onmessage = msg => {
         console.log("typing");
@@ -21,29 +21,3 @@ function setupWebSocket() {
     ws.onclose = setupWebSocket; // should reconnect if connection is closed
 
 }
-
-//function() {
-//  document.querySelector('textarea[data-editor]').each(function() {
-//    var textarea = $(this);
-//    var mode = textarea.data('editor');
-//    var editDiv = $('<div>', {
-//      position: 'absolute',
-//      width: textarea.width(),
-//      height: textarea.height(),
-//      'class': textarea.attr('class')
-//    }).insertBefore(textarea);
-//    textarea.css('display', 'none');
-//    var editor = ace.edit(editDiv[0]);
-//    editor.renderer.setShowGutter(textarea.data('gutter'));
-//    editor.getSession().setValue(textarea.val());
-//    editor.getSession().setMode("ace/mode/" + mode);
-//    editor.setTheme("ace/theme/idle_fingers");
-//
-//    // copy back to textarea on form submit...
-//    textarea.closest('form').submit(function() {
-//      textarea.val(editor.getSession().getValue());
-//    })
-//  });
-//}
-
-

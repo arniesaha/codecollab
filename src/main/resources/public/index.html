@@ -27,15 +27,8 @@
 
 
         <div class="container clearfix">
-            <h1>Open the URL in another tab to start collaborating</h1>
+            <h1>Codecollab - Open the URL in another tab to start collaborating</h1>
             <textarea placeholder="Type something ..." style="margin: 0px; width: 750px; height: 463px;"></textarea>
-<!--            <textarea placeholder="Type something ..." data-editor="xml" data-gutter="1" rows="15"></textarea>-->
-<!--            <div id="description"></div>-->
-<!--            <textarea id=demotext>-->
-
-<!--            </textarea>-->
-
-
         </div>
 
         <div class="container clearfix">
@@ -114,22 +107,29 @@
 
 <!--        const cws = new WebSocket(`ws://localhost:7070/docs/${window.location.hash.substr(1)}`);-->
 
-
+<!--        var channel = 0;-->
+<!--        var line = 0;-->
+<!--        var recievedOnSocket = false;-->
 <!--        function setupWebSocket() {-->
 
 <!--            cws.onmessage = msg => {-->
-<!--                console.log("typing");-->
-<!--                console.log(msg.data.length);-->
-<!--                console.log(msg.data);-->
 
-<!--                -->
-<!--            -->
-<!--&lt;!&ndash;                if(msg.data.indexOf('\n') >= 0){&ndash;&gt;-->
+<!--                   console.log(msg);-->
+<!--                   console.log(channel);-->
+<!--                   console.log(line);-->
+<!--                   var changeObj = JSON.parse(msg.data);-->
+<!--                   console.log(changeObj.from.line);-->
+<!--                   console.log(changeObj.sender);-->
 
+<!--                   recievedOnSocket = true;-->
 
-<!--                    editor.setValue(msg.data);-->
+<!--                if (changeObj.from.line == line && changeObj.from.ch == channel)-->
+<!--                 {-->
+<!--                    channel = change.from.ch;-->
+<!--                   line = changeObj.from.line;-->
+<!--                    editor.setValue(changeObj.text[0]);-->
+<!--                }-->
 
-<!--&lt;!&ndash;                }&ndash;&gt;-->
 
 <!--&lt;!&ndash;                const offset = msg.data.length - editor.getValue().length;&ndash;&gt;-->
 <!--&lt;!&ndash;                const selection = {start: editor.getCursor(true), end: editor.getCursor(false)};&ndash;&gt;-->
@@ -149,8 +149,17 @@
 
 <!--        // on and off handler like in jQuery-->
 <!--        editor.on('change',function(cMirror, change){-->
-<!--          // get value right from instance-->
-<!--          cws.send(cMirror.getValue());-->
+<!--          // get value right from instance {from, to, text, removed, origin}-->
+
+
+<!--            change.sender = "type";-->
+<!--&lt;!&ndash;            console.log(change.text[0], change.from, change.to);&ndash;&gt;-->
+<!--            if (change.from.line == line && change.from.ch == channel){-->
+<!--                cws.send(JSON.stringify(change));-->
+<!--            }-->
+
+<!--            channel = change.from.ch;-->
+<!--            line = change.from.line;-->
 <!--        });-->
 
         </script>
