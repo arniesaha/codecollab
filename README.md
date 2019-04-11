@@ -4,8 +4,8 @@
 
 ## screenshot
 
-<img src="screenshots/screenshot-1.png" width="25%" />
-<img src="screenshots/screenshot-2.png" width="25%" />
+<img src="screenshots/screenshot-1.png" width="40%" />
+<img src="screenshots/screenshot-2.png" width="45%" />
 
 ## run locally
 * `git clone https://github.com/arniesaha.git`
