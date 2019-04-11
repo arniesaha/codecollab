@@ -15,6 +15,6 @@
 
 * `git clone https://github.com/arniesaha/codecollab.git`
 * `cd codecollab`
-* `docker build -t profile-summary-for-github .`
+* `docker build -t codecallab .`
 * `docker run -it --rm --name codecollab -p 7070:7070 codecollab`
 * browse to http://localhost:7070
