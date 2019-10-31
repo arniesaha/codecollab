@@ -2,8 +2,6 @@
 
 Built with [javalin.io](https://javalin.io/) - which is a lightweight Java & Kotlin framework which provides a simple abstracted implementation of WebSockets used for this webapp.
 
-## live at http://codecollab-1591334708.ap-south-1.elb.amazonaws.com/
-
 ## screenshot
 
 <img src="screenshots/screenshot-1.png" width="40%" />
@@ -23,20 +21,6 @@ Built with [javalin.io](https://javalin.io/) - which is a lightweight Java & Kot
 * `docker build -t codecallab .`
 * `docker run -it --rm --name codecollab -p 7070:7070 codecollab`
 * browse to http://localhost:7070
-
-## deployment strategy: Amazon Elastic Container Service with Docker
-
-## vpc architecture:
-
-A private VPC is created for the application services. Access to the deployed instances via ECS is through a private accessible via the Bastion Host.
-
-<img src="screenshots/deployment-1.png" width="40%" />
-
-## security strategy:
-
-[ecs-cluster-vpc-part1](https://medium.com/@ahmetatalay/building-highly-available-scalable-and-reliable-ecs-clusters-part-1-creating-vpc-1321640225cc)
-
-[ecs-cluster-vpc-part2](https://medium.com/@ahmetatalay/building-highly-available-scalable-and-reliable-ecs-clusters-part-2-deploying-microservices-5eb4816b84b)
 
 
 ## webapp architecture via cloudformation
